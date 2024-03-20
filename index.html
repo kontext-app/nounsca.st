@@ -18,6 +18,18 @@
     width: 50vw;
     height: 50vh;
   }
+  .github-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 16px;
+    display: inline-block; /* Ensure the container fits the content */
+    /* Explicit size can be set here if necessary, e.g., width: 50px; */
+  }
+  .github-logo img {
+    width: 25px; /* Example of explicitly setting the image size */
+    height: auto; /* Maintain aspect ratio */
+  }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -25,10 +37,17 @@
     var selectedColor = colors[Math.floor(Math.random() * colors.length)];
     document.querySelector('html').style.background = selectedColor;
     document.querySelector('body').style.background = selectedColor;
+
+    var logoPath = selectedColor === '#1A1A1A' ? 'github-mark-white.svg' : 'github-mark.svg';
+    document.getElementById('githubLogo').setAttribute('src', logoPath);
   });
 </script>
 </head>
 <body>
+    <a href="https://github.com/kontext-app/nounsca.st" target="_blank" class="github-logo">
+        <img id="githubLogo" src="" alt="GitHub Logo">
+    </a>
+    
     <svg width="1594" height="309" viewBox="0 0 1594 309" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M185.644 0H61.8814V20.6271H185.644V0Z" fill="#F3322C"/>
         <path d="M330.034 0H206.271V20.6271H330.034V0Z" fill="#F3322C"/>
@@ -76,6 +95,6 @@
         <path d="M1133.83 308V258H1183.66V308H1233.49V208C1189.27 208 1128.54 208 1084 208V308H1133.83Z" fill="white"/>
         <path d="M1053 258.66H1003V208.83H1053V159H953C953 203.224 953 263.954 953 308.49H1053V258.66Z" fill="white"/>
         <path d="M1313.83 208V258H1264V308H1363.66V258H1413.49V208H1313.83Z" fill="white"/>
-    </svg>        
+    </svg>
 </body>
 </html>
